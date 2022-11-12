@@ -2,6 +2,7 @@ package com.shehab;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -21,13 +22,11 @@ class DemoUtilsTest {
 	} 
 	@Test
 	void test_Equel_And_Not_Equal() {
-		System.out.println("testEquelAndNotEqual");
 		assertEquals(5,demoUtils.add(2, 3));
 	}
 	
 	@Test
 	void testNullAndNotNull() {
-		System.out.println("testNullAndNotNull");
 		String str1=null;
 		String str2="luv2code";
 		assertNull(demoUtils.checkNull(str1),"This String Must Be Null");
@@ -74,6 +73,11 @@ class DemoUtilsTest {
 	void testThrowException() {
 		assertThrows(Exception.class, ()->demoUtils.throwException(-1), "value must be greater or equal 0");
 		assertDoesNotThrow(()->demoUtils.throwException(0), "value must be greater or equal 0");
+	}
+	@DisplayName("Time Out")
+	@Test
+	void testTimeOut() {
+		assertTimeoutPreemptively(Duration.ofSeconds(3), ()->demoUtils.checkTimeout());
 	}
 	
 	
