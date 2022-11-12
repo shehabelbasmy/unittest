@@ -48,4 +48,11 @@ public class DemoUtils {
 		}
 		return false;
 	}
+	
+	public String throwException(int a) throws Exception {
+		if (a<0) {
+			throw new Exception("Value must be Greater than or equal 0");
+		}
+		return "Value is Greater than or equal 0";
+	}
 }

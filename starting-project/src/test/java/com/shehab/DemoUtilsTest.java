@@ -69,4 +69,12 @@ class DemoUtilsTest {
 		List<String> theList=List.of("luv","2","code");
 		assertLinesMatch(demoUtils.getAcademyInList(), theList);
 	}
+	@DisplayName("Throw Exception")
+	@Test
+	void testThrowException() {
+		assertThrows(Exception.class, ()->demoUtils.throwException(-1), "value must be greater or equal 0");
+		assertDoesNotThrow(()->demoUtils.throwException(0), "value must be greater or equal 0");
+	}
+	
+	
 }
