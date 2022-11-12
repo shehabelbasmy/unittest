@@ -2,6 +2,8 @@ package com.shehab;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -16,7 +18,7 @@ class DemoUtilsTest {
 	@BeforeAll
 	static void setupBeforeAll() {
 		demoUtils=new DemoUtils();
-	}
+	} 
 	@Test
 	void test_Equel_And_Not_Equal() {
 		System.out.println("testEquelAndNotEqual");
@@ -47,5 +49,24 @@ class DemoUtilsTest {
 		int gradeTwo=5;
 		assertTrue(demoUtils.isGreater(gradeOne, gradeTwo), "This should return true");
 		assertFalse(demoUtils.isGreater(gradeTwo, gradeOne), "This should return false");
+	}
+	@DisplayName("Array Equals")
+	@Test
+	void testArrayEquals() {
+		String []stringArray= {"a","b","c"};
+		assertArrayEquals(stringArray, demoUtils.getFirstThreeLetterOfAlphabet(),"Array Should Be Same");
+	}
+	
+	@DisplayName("Iterable Equals")
+	@Test
+	void testIterableEquals() {
+		List<String> theList=List.of("luv","2","code");
+		assertIterableEquals(demoUtils.getAcademyInList(), theList,"Expected list should be the same as actual list");
+	}
+	@DisplayName("Line Match")
+	@Test
+	void testLineMatch() {
+		List<String> theList=List.of("luv","2","code");
+		assertLinesMatch(demoUtils.getAcademyInList(), theList);
 	}
 }
