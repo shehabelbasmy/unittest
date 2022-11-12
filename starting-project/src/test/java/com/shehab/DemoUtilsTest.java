@@ -40,7 +40,7 @@ class DemoUtilsTest {
 	}
 	
 	@Test
-//	@Order(1)
+	@Order(-1)
 	void testNullAndNotNull() {
 		String str1=null;
 		String str2="luv2code";
