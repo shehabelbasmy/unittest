@@ -8,4 +8,11 @@ mvn clean test
 mvn site -DgenerateReport=false
 //site here for styling the generated report with css
 the report directory // target/site/surefire-report.html 
- 
+
+JaCoCo provides a maven plugin for generate code coverage
+
+
+
+
+
+
