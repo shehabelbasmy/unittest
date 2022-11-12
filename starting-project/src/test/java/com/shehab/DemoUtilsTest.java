@@ -23,8 +23,8 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-@TestMethodOrder(MethodOrderer.DisplayName.class) //based on @displayname
-//@TestMethodOrder(MethodOrderer.MethodName.class)
+//@TestMethodOrder(MethodOrderer.DisplayName.class) //based on @displayname
+@TestMethodOrder(MethodOrderer.MethodName.class)
 //@TestMethodOrder(MethodOrderer.Random.class)
 //@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
