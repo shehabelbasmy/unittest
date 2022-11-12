@@ -40,5 +40,12 @@ class DemoUtilsTest {
 		
 		assertNotSame(str, demoUtils.getAcademyDuplicate(),"objects not should refer to same object");
 	}
-	
+	@DisplayName("True & False")
+	@Test
+	void testTrueAndFalse() {
+		int gradeOne=10;
+		int gradeTwo=5;
+		assertTrue(demoUtils.isGreater(gradeOne, gradeTwo), "This should return true");
+		assertFalse(demoUtils.isGreater(gradeTwo, gradeOne), "This should return false");
+	}
 }
