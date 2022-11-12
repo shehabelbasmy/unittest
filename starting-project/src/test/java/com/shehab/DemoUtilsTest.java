@@ -18,11 +18,19 @@ import java.time.Duration;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.condition.EnabledForJreRange;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
+import org.junit.jupiter.api.condition.EnabledOnJre;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.JRE;
+import org.junit.jupiter.api.condition.OS;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
@@ -89,11 +97,45 @@ class DemoUtilsTest {
 		assertThrows(Exception.class, ()->demoUtils.throwException(-1), "value must be greater or equal 0");
 		assertDoesNotThrow(()->demoUtils.throwException(0), "value must be greater or equal 0");
 	}
+	
 	@DisplayName("Time Out")
 	@Test
 	void testTimeOut() {
 		assertTimeoutPreemptively(Duration.ofSeconds(3), ()->demoUtils.checkTimeout());
 	}
+	@Test
+	@EnabledOnOs(OS.LINUX)
+	void testOnlyForLinux() {
+		
+	}
 	
+	@Test
+	@EnabledOnJre(JRE.JAVA_17)
+	void testOnlyForJava17() {
+		
+	}
+	@Test
+	@EnabledForJreRange(min=JRE.JAVA_12,max = JRE.JAVA_18)
+	void testOnlyForJavaRange() {
+		
+	}
+	
+	@Test
+	@Disabled
+	void testDisabled() {
+		
+	}
+	
+	@Test
+	@EnabledIfSystemProperty(named = "name",matches = "shehab")
+	void testOnlyForSystemProperty() {
+		
+	}
+	
+	@Test
+	@EnabledIfEnvironmentVariable(named = "name",matches = "ahmed")
+	void testOnlyForEnvironmentProperty() {
+		
+	}
 	
 }
