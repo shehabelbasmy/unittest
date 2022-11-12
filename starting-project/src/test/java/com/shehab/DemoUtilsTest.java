@@ -1,13 +1,9 @@
 package com.shehab;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
@@ -15,27 +11,12 @@ import org.junit.jupiter.api.Test;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class DemoUtilsTest {
 
-	private DemoUtils demoUtils;
-	
-	@BeforeEach
-	void setupBeforeEach() {
-		System.err.println("Before Each");
-		demoUtils=new DemoUtils();
-	}
-	@AfterEach
-	void setupAfterEach() {
-		System.err.println("After Each");
-	}
+	private static DemoUtils demoUtils;
 	
 	@BeforeAll
-	static void setupBeforAll() {
-		System.out.println("DemoUtilsTest.setupBeforAll()");
+	static void setupBeforeAll() {
+		demoUtils=new DemoUtils();
 	}
-	@AfterAll
-	static void setupAfterAll() {
-		System.out.println("DemoUtilsTest.setupAfterAll()");
-	}
-	
 	@Test
 	void test_Equel_And_Not_Equal() {
 		System.out.println("testEquelAndNotEqual");
@@ -49,6 +30,15 @@ class DemoUtilsTest {
 		String str2="luv2code";
 		assertNull(demoUtils.checkNull(str1),"This String Must Be Null");
 		assertNotNull(demoUtils.checkNull(str2),"This String Must Be Not Null");
+	}
+	@Test
+	@DisplayName("Same and not same")
+	void testSameAndNotSame() {
+		String str="shehab";
+		
+		assertSame(demoUtils.getAcademy(), demoUtils.getAcademyDuplicate(),"objects should refer to same object");
+		
+		assertNotSame(str, demoUtils.getAcademyDuplicate(),"objects not should refer to same object");
 	}
 	
 }
