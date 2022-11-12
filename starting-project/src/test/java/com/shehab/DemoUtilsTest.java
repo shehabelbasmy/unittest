@@ -20,13 +20,11 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-//@TestMethodOrder(MethodOrderer.DisplayName.class) //based on @displayname
-@TestMethodOrder(MethodOrderer.MethodName.class)
-//@TestMethodOrder(MethodOrderer.Random.class)
-//@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
 
 	private static DemoUtils demoUtils;
@@ -36,11 +34,13 @@ class DemoUtilsTest {
 		demoUtils=new DemoUtils();
 	} 
 	@Test
+	@Order(1)
 	void test_Equel_And_Not_Equal() {
 		assertEquals(5,demoUtils.add(2, 3));
 	}
 	
 	@Test
+//	@Order(1)
 	void testNullAndNotNull() {
 		String str1=null;
 		String str2="luv2code";
