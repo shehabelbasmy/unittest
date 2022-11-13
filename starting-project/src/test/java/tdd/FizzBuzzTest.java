@@ -1,13 +1,15 @@
 package tdd;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class FizzBuzzTest {
@@ -46,5 +48,20 @@ class FizzBuzzTest {
 		assertEquals(expected, FizzBuzz.compute(4),"Should Return FizzBuzz");
 	}
 	
+	@DisplayName("Testing with CSV Data")
+	@Order(6)
+	@ParameterizedTest(name="value{0},expected{1}")
+	@CsvSource({"1,1","2,2","3,Fizz","4,4","5,Buzz","15,FizzBuzz",})
+	void testCsvData(int i,String expected) {
+		assertEquals(expected, FizzBuzz.compute(i));
+	}
+	
+	@DisplayName("Testing with CSV Data")
+	@Order(6)
+	@ParameterizedTest(name="value{0},expected{1}")
+	@CsvFileSource(resources = "/file.csv")
+	void testCsvFile(int i,String expected) {
+		assertEquals(expected, FizzBuzz.compute(i));
+	}
 	 
 }
