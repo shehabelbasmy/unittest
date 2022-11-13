@@ -1,4 +1,4 @@
-package com.luv2code;
+package com.luv2code.component;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.SpringApplication;
@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
-import com.luv2code.model.CollegeStudent;
+import com.luv2code.component.model.CollegeStudent;
 
 @SpringBootApplication
 public class Application {

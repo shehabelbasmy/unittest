@@ -1,4 +1,4 @@
-package com.luv2code.model;
+package com.luv2code.component.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

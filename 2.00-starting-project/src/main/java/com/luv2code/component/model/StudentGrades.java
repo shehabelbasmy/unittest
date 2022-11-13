@@ -1,4 +1,4 @@
-package com.luv2code.model;
+package com.luv2code.component.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -48,5 +48,10 @@ public class StudentGrades {
 		}
 		return null;
 	}
-	
+	public Boolean isGradeGreater(double gradeOne, double gradeTwo) {
+        if (gradeOne > gradeTwo) {
+            return true;
+        }
+        return false;
+    }
 }
