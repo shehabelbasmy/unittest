@@ -23,7 +23,6 @@ public class StudentAndGradeService {
 		collegeStudent.setId(3);
 		studentDao.save(collegeStudent);
 	}
-
 	public Boolean checkIfStudentIsNull(int i) {
 		Optional<CollegeStudent> student = studentDao.findById(i);
 		if (student.isPresent()) {
@@ -31,15 +30,10 @@ public class StudentAndGradeService {
 		}
 		return false;
 	}
-
 	public void deleteStudent(int id) {
 		studentDao.deleteById(id);
 	}
-
 	public Iterable<CollegeStudent> getGradeBook() {
-		
 		return studentDao.findAll();
 	}
-	
-	
 }
