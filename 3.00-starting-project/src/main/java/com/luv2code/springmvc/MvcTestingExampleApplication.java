@@ -1,12 +1,17 @@
 package com.luv2code.springmvc;
 
-import com.luv2code.springmvc.models.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
+
+import com.luv2code.springmvc.models.CollegeStudent;
+import com.luv2code.springmvc.models.Grade;
+import com.luv2code.springmvc.models.HistoryGrade;
+import com.luv2code.springmvc.models.MathGrade;
+import com.luv2code.springmvc.models.ScienceGrade;
 
 @SpringBootApplication
 public class MvcTestingExampleApplication {

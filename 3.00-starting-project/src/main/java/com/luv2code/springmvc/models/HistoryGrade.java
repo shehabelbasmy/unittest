@@ -1,4 +1,4 @@
-package com.luv2code.springmvc.models;
+ package com.luv2code.springmvc.models;
 
 import javax.persistence.*;
 
