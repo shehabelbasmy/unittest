@@ -10,9 +10,3 @@ mvn site -DgenerateReport=false
 the report directory // target/site/surefire-report.html 
 
 JaCoCo provides a maven plugin for generate code coverage
-
-
-
-
-
-

@@ -18,15 +18,12 @@ import com.luv2code.component.model.StudentGrades;
 
 @SpringBootTest(classes = Application.class)
 class ApplicationExampleTest {
+	
 	private static int count = 0;
 	@Value("${info.app.name}")
 	private String appInfo;
 	@Value("${info.app.description}")
 	private String appDescription;
-	@Value("${info.app.version}")
-	private String appVersion;
-	@Value("${info.school.name}")
-	private String schoolName;
 	@Autowired
 	private CollegeStudent student;
 	@Autowired
@@ -44,11 +41,6 @@ class ApplicationExampleTest {
 		student.setEmailAddress("shehabelbasmy123@gmail.com");
 		grades.setMathGradeResults(List.of(100.0, 200.0));
 		student.setStudentGrades(grades);
-	}
-
-	@Test
-	void basicTest() {
-
 	}
 
 	@Test

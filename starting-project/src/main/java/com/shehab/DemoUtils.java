@@ -32,10 +32,6 @@ public class DemoUtils {
 		return a+b;
 	}
 	
-	public int multiply(int a,int b) {
-		return a*b;
-	}
-	
 	public Object checkNull(Object obj) {
 		if (obj!=null) {
 			return obj;
