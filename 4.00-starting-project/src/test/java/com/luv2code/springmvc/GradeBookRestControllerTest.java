@@ -33,9 +33,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.luv2code.springmvc.models.CollegeStudent;
-import com.luv2code.springmvc.repository.HistoryGradesDao;
-import com.luv2code.springmvc.repository.MathGradesDao;
-import com.luv2code.springmvc.repository.ScienceGradesDao;
 import com.luv2code.springmvc.repository.StudentDao;
 import com.luv2code.springmvc.service.StudentAndGradeService;
 
@@ -57,18 +54,6 @@ class GradeBookRestControllerTest {
 
     @Autowired
     private StudentDao studentDao;
-
-    @Autowired
-    private MathGradesDao mathGradeDao;
-
-    @Autowired
-    private ScienceGradesDao scienceGradeDao;
-
-    @Autowired
-    private HistoryGradesDao historyGradeDao;
-    
-    @Autowired
-    private StudentAndGradeService studentService;
     
     @Autowired
     private ObjectMapper mapper;
