@@ -1,0 +1,12 @@
+configure maven to run unit test
+mvn clean test
+we should add maven-surefire-plugin
+
+
+generate unit test reports using surefire plugin
+mvn clean test
+mvn site -DgenerateReport=false
+//site here for styling the generated report with css
+the report directory // target/site/surefire-report.html 
+
+JaCoCo provides a maven plugin for generate code coverage
